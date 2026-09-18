@@ -1,2 +1,29 @@
-# life-simulator
-Telegram Mini App - Real Life Simulator with jobs, businesses and admin panel
+# Life Simulator — Telegram Mini App
+
+Симулятор реальной жизни с работами, бизнесами и админ-панелью.
+
+## Что уже есть
+
+- Профиль игрока (деньги, энергия, настроение, уровень, опыт)
+- 22 работы разных уровней
+- 14 бизнесов
+- Система энергии и отдыха
+- Админ-панель (по Telegram ID)
+- Сохранение прогресса (localStorage + Telegram user id)
+
+## Как запустить
+
+1. Открой `web/index.html` через любой хостинг (GitHub Pages, Netlify, Vercel и т.д.)
+2. В BotFather создай Mini App и укажи ссылку на `index.html`
+3. В файле `web/config.js` пропиши свой Telegram ID как админа
+
+## Структура
+
+- `web/` — фронтенд мини-приложения
+- `data/` — данные работ и бизнесов
+
+## Дальнейшие планы
+
+- Подключение настоящей базы (Supabase)
+- Мультиплеер и конкуренция
+- Более глубокая экономика
