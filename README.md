@@ -1,28 +1,14 @@
-# Life Simulator — Telegram Mini App
+# Life Simulator Bot
 
-Симулятор реальной жизни с работами, бизнесами и админ-панелью.
+Обычный Telegram-бот (симулятор жизни).
 
-## Быстрый запуск (GitHub Pages)
+## Как запустить на Replit (с телефона)
 
-1. Зайди в **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / folder: `/ (root)`
-4. Save
+1. Зайди на https://replit.com и зарегистрируйся
+2. Нажми **Create Repl** → Import from GitHub
+3. Вставь ссылку: https://github.com/pravitelkitajskojpartii-cell/life-simulator
+4. В файле `bot.py` замени `ВСТАВЬ_ТОКЕН_СЮДА` на свой токен
+5. В `ADMIN_IDS` поставь свой Telegram ID
+6. Нажми Run
 
-Через 1–2 минуты будет доступна ссылка:
-`https://pravitelkitajskojpartii-cell.github.io/life-simulator/`
-
-Эту ссылку вставь в Mini App у BotFather.
-
-## Важно
-
-Открой файл `config.js` и замени `123456789` на свой Telegram ID
-(узнать у @userinfobot).
-
-## Что есть
-
-- 22 работы
-- 14 бизнесов
-- Энергия, настроение, уровни
-- Админ-панель
-- Сохранение прогресса
+Бот заработает.
