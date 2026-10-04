@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Life Simulator</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="user-info">
+        <div class="avatar" id="avatar">?</div>
+        <div>
+          <div class="name" id="userName">Игрок</div>
+          <div class="level">Уровень <span id="level">1</span></div>
+        </div>
+      </div>
+      <div class="money" id="money">$500</div>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Энергия</div>
+        <div class="bar"><div class="fill energy" id="energyBar"></div></div>
+        <div class="stat-value" id="energyValue">80/100</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Настроение</div>
+        <div class="bar"><div class="fill mood" id="moodBar"></div></div>
+        <div class="stat-value" id="moodValue">70/100</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-btn active" data-tab="home">Главная</button>
+      <button class="nav-btn" data-tab="jobs">Работы</button>
+      <button class="nav-btn" data-tab="business">Бизнес</button>
+      <button class="nav-btn" data-tab="admin" id="adminBtn" style="display:none">Админ</button>
+    </nav>
+
+    <!-- Content -->
+    <main id="content">
+      <!-- Home Tab -->
+      <section id="tab-home" class="tab active">
+        <div class="card">
+          <h2>Добро пожаловать</h2>
+          <p>Работай, покупай бизнесы, развивайся.</p>
+          <button class="btn" id="restBtn">Отдохнуть (+25 энергии)</button>
+          <button class="btn secondary" id="collectBtn">Собрать доход с бизнесов</button>
+        </div>
+        <div class="card" id="ownedBusinesses">
+          <h3>Твои бизнесы</h3>
+          <div id="ownedList">Пока нет бизнесов</div>
+        </div>
+      </section>
+
+      <!-- Jobs Tab -->
+      <section id="tab-jobs" class="tab">
+        <div id="jobsList"></div>
+      </section>
+
+      <!-- Business Tab -->
+      <section id="tab-business" class="tab">
+        <div id="businessList"></div>
+      </section>
+
+      <!-- Admin Tab -->
+      <section id="tab-admin" class="tab">
+        <div class="card">
+          <h2>Админ-панель</h2>
+          <p>Только для администраторов</p>
+          <div class="admin-actions">
+            <button class="btn" onclick="adminGiveMoney(10000)">+10 000$</button>
+            <button class="btn" onclick="adminGiveMoney(100000)">+100 000$</button>
+            <button class="btn" onclick="adminSetEnergy(100)">Полная энергия</button>
+            <button class="btn" onclick="adminSetMood(100)">Полное настроение</button>
+            <button class="btn danger" onclick="adminReset()">Сбросить прогресс</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="data/jobs.js"></script>
+  <script src="data/businesses.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--tg-theme-bg-color, #0f0f13);
+  color: var(--tg-theme-text-color, #ffffff);
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.level {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.money {
+  font-size: 20px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.stat-label {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.fill.energy { background: #3b82f6; }
+.fill.mood { background: #eab308; }
+
+.stat-value {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+  overflow-x: auto;
+}
+
+.nav-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nav-btn.active {
+  background: #6366f1;
+  border-color: #6366f1;
+}
+
+.tab {
+  display: none;
+  padding: 0 16px;
+}
+
+.tab.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.card h2, .card h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.card p {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #6366f1;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.08);
+}
+
+.btn.danger {
+  background: #ef4444;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.job-card, .biz-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.job-info h3, .biz-info h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.job-info p, .biz-info p {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.job-meta, .biz-meta {
+  text-align: right;
+  font-size: 13px;
+}
+
+.pay {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.req {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+.admin-actions .btn {
+  margin-bottom: 8px;
+}
